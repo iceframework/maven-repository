@@ -1,0 +1,74 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>ice-boot-activemq</artifactId>
+	<packaging>jar</packaging>
+
+	<name>ice-boot-activemq</name>
+	<description>activemq project for Spring Boot</description>
+
+	<!-- ICE 底层POM -->
+	<parent>
+		<groupId>com.iceframework</groupId>
+		<artifactId>ice-boot-pom</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<relativePath /> <!-- lookup parent from repository -->
+	</parent>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+		<maven.compile.source>1.8</maven.compile.source>
+		<maven.compile.target>1.8</maven.compile.target>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>com.iceframework</groupId>
+			<artifactId>ice-boot-core</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-activemq</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.messaginghub</groupId>
+			<artifactId>pooled-jms</artifactId>
+		</dependency>
+		<!--ActiveMq依赖结束 -->
+
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>${maven.compile.source}</source>
+					<target>${maven.compile.target}</target>
+					<encoding>${project.build.sourceEncoding}</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar-no-fork</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-deploy-plugin</artifactId>
+			</plugin>
+		</plugins>
+		<finalName>ice-boot-activemq</finalName>
+	</build>
+</project>

@@ -1,0 +1,119 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>ice-boot-activiti</artifactId>
+	<packaging>jar</packaging>
+
+	<name>ice-boot-activiti</name>
+	<description>activiti project for Spring Boot</description>
+
+	<!-- ICE 底层POM -->
+	<parent>
+		<groupId>com.iceframework</groupId>
+		<artifactId>ice-boot-pom</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<relativePath /> <!-- lookup parent from repository -->
+	</parent>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+		<maven.compile.source>1.8</maven.compile.source>
+		<maven.compile.target>1.8</maven.compile.target>
+		<activiti.version>6.0.0</activiti.version>
+	</properties>
+	<dependencies>
+		<!-- Activiti start -->
+		<dependency>
+			<groupId>org.activiti</groupId>
+			<artifactId>activiti-spring-boot-starter-basic</artifactId>
+			<version>${activiti.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.activiti</groupId>
+			<artifactId>activiti-spring-boot-starter-rest-api</artifactId>
+			<version>${activiti.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework.security</groupId>
+					<artifactId>*</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.activiti</groupId>
+			<artifactId>activiti-json-converter</artifactId>
+			<version>6.0.0</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.activiti</groupId>
+					<artifactId>activiti-bpmn-model</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<!-- 流程编辑器静态文件依赖 -->
+		<dependency>
+			<groupId>org.apache.xmlgraphics</groupId>
+			<artifactId>batik-codec</artifactId>
+			<version>1.7</version>
+		</dependency>
+		<dependency>
+			<groupId>com.iceframework</groupId>
+			<artifactId>ice-boot-core</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
+		<!-- JUnit5 与Spring5相对应 -->
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>${maven.compile.source}</source>
+					<target>${maven.compile.target}</target>
+					<encoding>${project.build.sourceEncoding}</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar-no-fork</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-deploy-plugin</artifactId>
+			</plugin>
+		</plugins>
+		<finalName>ice-boot-activiti</finalName>
+	</build>
+</project>

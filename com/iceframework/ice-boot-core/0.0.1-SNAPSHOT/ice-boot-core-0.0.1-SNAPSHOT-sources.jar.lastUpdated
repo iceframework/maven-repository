@@ -1,0 +1,12 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Sun Jul 28 10:34:45 CST 2019
+https\://oss.sonatype.org/content/repositories/snapshots/.error=
+http\://maven.aliyun.com/nexus/content/groups/public//.error=
+http\://maven.aliyun.com/nexus/content/groups/public/.lastUpdated=1564281285706
+http\://maven.aliyun.com/nexus/content/repositories/snapshots/.lastUpdated=1564281284903
+https\://oss.sonatype.org/content/repositories/snapshots/.lastUpdated=1564278448074
+http\://maven.aliyun.com/nexus/content/groups/public/.error=
+http\://maven.aliyun.com/nexus/content/groups/public//.lastUpdated=1564278448887
+https\://raw.githubusercontent.com/iceframework/maven-repository/master/.error=
+https\://raw.githubusercontent.com/iceframework/maven-repository/master/.lastUpdated=1564278446531
+http\://maven.aliyun.com/nexus/content/repositories/snapshots/.error=

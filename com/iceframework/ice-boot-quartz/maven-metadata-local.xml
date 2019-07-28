@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>com.iceframework</groupId>
+  <artifactId>ice-boot-quartz</artifactId>
+  <versioning>
+    <versions>
+      <version>0.0.1-SNAPSHOT</version>
+    </versions>
+    <lastUpdated>20190728023137</lastUpdated>
+  </versioning>
+</metadata>
