@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <metadata>
   <groupId>com.iceframework</groupId>
-  <artifactId>ice-boot-core</artifactId>
+  <artifactId>ice-cloud-pom</artifactId>
   <versioning>
     <versions>
       <version>0.0.1-SNAPSHOT</version>
     </versions>
-    <lastUpdated>20190824135914</lastUpdated>
+    <lastUpdated>20190824135759</lastUpdated>
   </versioning>
 </metadata>
